@@ -52,8 +52,21 @@ class Maths:
     def HCF(x, y):
         """Returns the highest common factor of x and y"""
         return (x * y) // Maths.LCM(x, y)
-        
-        
+
+    @staticmethod
+    def prime_factors(n: int):
+        i = 2
+        factors = []
+        while i * i <= n:
+            if n % i:
+                i += 1
+            else:
+                n //= i
+                factors.append(i)
+        if n > 1:
+            factors.append(n)
+        return factors
+
 
 
 def fizzbuzz():
